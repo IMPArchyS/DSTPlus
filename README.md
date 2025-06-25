@@ -6,12 +6,12 @@ This repo contains the source code, for the Don't starve Together mod DSTPlus, W
 </p>
 
 ## Suggestions
-You can suggest any changes via the Issues tab or at the steam workshopq
+You can suggest any changes via the Issues tab or at the steam workshop
 
 ## Roadmap
 ### V1 ✔️
 - initial start, toggleable alternative recipes for most building materials that tend to get annoying to farm
-### V2
+### V2 ✔️
 - balance recipes base on feedback
 ### V3
 - add toggleable tuning changes e.g. (moonrock axe durability)

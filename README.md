@@ -12,12 +12,12 @@ You can suggest any changes via the Issues tab or at the steam workshop
 ### V1 ✔️
 - initial start, toggleable alternative recipes for most building materials that tend to get annoying to farm
 ### V2 ✔️
-- balance recipes base on feedback
+- balance recipes based on feedback
 ### V3 ✔️
 - add toggleable tuning changes e.g. (moonrock axe durability)
 ### V4 ✔️
 - add custom obsidian tools and tweak any unbalanced stuff
-### V5
+### V5 ✔️
 - add old rabbit AI and tweak obsidian tools
 ### V6
 - add toggleable spoilage for most perishable stuff

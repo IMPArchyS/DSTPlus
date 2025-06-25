@@ -146,6 +146,7 @@ if enableNewTools == "true" then
 	{
 		ingredient("spear", 1),
 		ingredient("redgem", 4),
+		ingredient("moonglass", 4),
 	},
 	tech.SCIENCE_TWO, { atlas = "images/inventoryimages/obispear.xml", image = "obispear.tex"}, {"WEAPONS"})
 
@@ -153,6 +154,7 @@ if enableNewTools == "true" then
 	{
 		ingredient("axe", 1),
 		ingredient("redgem", 3),
+		ingredient("moonglass", 3),
 	},
 	tech.SCIENCE_TWO, {atlas = "images/inventoryimages/obiaxe.xml", image = "obiaxe.tex"}, {"TOOLS"})
 
@@ -160,6 +162,37 @@ if enableNewTools == "true" then
 	{
 		ingredient("tentaclespike", 1),
 		ingredient("redgem", 6),
+		ingredient("moonglass", 4),
 	},
 	tech.SCIENCE_TWO, {atlas = "images/inventoryimages/obiblade.xml", image = "obiblade.tex"}, {"WEAPONS"})
+end
+
+-- togglable rabbit AI - true - old rabbit ai, false - new rabbit ai
+local enableOldRabbitAi = GetModConfigData("rabbitAI") or "true"
+
+if enableOldRabbitAi == "true" then
+    AddBrainPostInit("rabbitbrain", function(brain)
+        local bt = brain.bt
+
+        if bt and bt.root and bt.root.children then
+            local newChildren = {}
+            local removedFirstRunAway = false
+
+            for i, child in ipairs(bt.root.children) do
+                local isRunAway = (child.__name == "RunAway" or (child.name and child.name == "RunAway") or tostring(child):find("RunAway"))
+
+                if isRunAway and not removedFirstRunAway then
+                    removedFirstRunAway = true
+                else
+                    table.insert(newChildren, child)
+                end
+            end
+
+            bt.root.children = newChildren
+
+            for i, child in ipairs(bt.root.children) do
+                child.parent = bt.root
+            end
+        end
+    end)
 end

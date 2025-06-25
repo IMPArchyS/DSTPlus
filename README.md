@@ -15,7 +15,7 @@ You can suggest any changes via the Issues tab or at the steam workshop
 - balance recipes base on feedback
 ### V3 ✔️
 - add toggleable tuning changes e.g. (moonrock axe durability)
-### V4
+### V4 ✔️
 - add custom obsidian tools and tweak any unbalanced stuff
 ### V5
 - add old rabbit AI and tweak obsidian tools

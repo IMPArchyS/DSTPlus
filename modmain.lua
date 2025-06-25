@@ -1,6 +1,9 @@
 all_clients_require_mod = true
 
 PrefabFiles = {
+	"obispear",
+	"obiblade",
+	"obiaxe"
 }
 
 local str = GLOBAL.STRINGS
@@ -36,6 +39,20 @@ str.RECIPE_DESC.ROTTENEGG = "Why would you make these?"
 str.NAMES.POOP = "Poop"
 str.CHARACTERS.GENERIC.DESCRIBE.POOP = "This doesn't make sense."
 str.RECIPE_DESC.POOP = "You can fertilize your crops."
+
+-- NEW METEOR RECIPES
+str.NAMES.OBISPEAR = "Meteor Spear"
+str.CHARACTERS.GENERIC.DESCRIBE.OBISPEAR = "It smells like stardust."
+str.RECIPE_DESC.OBISPEAR = "A spear combined with stardust."
+
+str.NAMES.OBIAXE = "Meteor Axe"
+str.CHARACTERS.GENERIC.DESCRIBE.OBIAXE = "With the power of stardust no tree is safe."
+str.RECIPE_DESC.OBIAXE = "An axe made of stardust."
+
+str.NAMES.OBIBLADE = "Meteor Blade"
+str.CHARACTERS.GENERIC.DESCRIBE.OBIBLADE = "Fear my stardust blade creatures!"
+str.RECIPE_DESC.OBIBLADE = "A blade made from stardust."
+
 
 -- RECIPES
 local enableAltRecipes = GetModConfigData("AltRecipes") or "true"
@@ -119,4 +136,30 @@ local enableAltTunings = GetModConfigData("AltTunings") or "true"
 if enableAltTunings == "true" then
 	-- QoL for moonglass axe, can cut more trees
 	tuning.MOONGLASSAXE.CONSUMPTION =  0.5
+end
+
+-- CUSTOM METEOR TOOLS
+local enableNewTools = GetModConfigData("MeteorTools") or "true"
+
+if enableNewTools == "true" then
+	AddRecipe2("obispear",
+	{
+		ingredient("spear", 1),
+		ingredient("redgem", 4),
+	},
+	tech.SCIENCE_TWO, { atlas = "images/inventoryimages/obispear.xml", image = "obispear.tex"}, {"WEAPONS"})
+
+	AddRecipe2("obiaxe",
+	{
+		ingredient("axe", 1),
+		ingredient("redgem", 3),
+	},
+	tech.SCIENCE_TWO, {atlas = "images/inventoryimages/obiaxe.xml", image = "obiaxe.tex"}, {"TOOLS"})
+
+	AddRecipe2("obiblade",
+	{
+		ingredient("tentaclespike", 1),
+		ingredient("redgem", 6),
+	},
+	tech.SCIENCE_TWO, {atlas = "images/inventoryimages/obiblade.xml", image = "obiblade.tex"}, {"WEAPONS"})
 end

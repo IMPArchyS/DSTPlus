@@ -1,7 +1,7 @@
-name = "DSTplus V1"
+name = "DSTplus V4"
 description = "Tweaks to normal Don't Starve recipes, more recipes for resources, even custom tools, tweaks for spoilage & rabbit AI."
 author = "ArchyS"
-version = "0.1"
+version = "0.4"
 
 forumthread = ""
 
@@ -27,6 +27,15 @@ configuration_options = {
 	{
 		name = "AltTunings",
 		label = "Alternative Tunings",
+		options = {
+			{description = "True", data = "true"},
+			{description = "False", data = "false"},
+		},
+		default = "true",
+	},
+	{
+		name = "MeteorTools",
+		label = "New Meteor Tools",
 		options = {
 			{description = "True", data = "true"},
 			{description = "False", data = "false"},

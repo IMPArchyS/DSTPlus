@@ -112,3 +112,11 @@ if enableAltRecipes == "true" then
 	},
 	tech.SCIENCE_TWO, {numtogive = 2}, {"REFINE"})
 end
+
+-- TUNINGS
+local enableAltTunings = GetModConfigData("AltTunings") or "true"
+
+if enableAltTunings == "true" then
+	-- QoL for moonglass axe, can cut more trees
+	tuning.MOONGLASSAXE.CONSUMPTION =  0.5
+end

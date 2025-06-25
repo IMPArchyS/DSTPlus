@@ -1,7 +1,7 @@
-name = "DSTplus V4"
+name = "DSTplus V5"
 description = "Tweaks to normal Don't Starve recipes, more recipes for resources, even custom tools, tweaks for spoilage & rabbit AI."
 author = "ArchyS"
-version = "0.4"
+version = "0.5"
 
 forumthread = ""
 
@@ -35,7 +35,16 @@ configuration_options = {
 	},
 	{
 		name = "MeteorTools",
-		label = "New Meteor Tools",
+		label = "Meteor Tools",
+		options = {
+			{description = "True", data = "true"},
+			{description = "False", data = "false"},
+		},
+		default = "true",
+	},
+	{
+		name = "rabbitAI",
+		label = "Old Rabbit AI",
 		options = {
 			{description = "True", data = "true"},
 			{description = "False", data = "false"},

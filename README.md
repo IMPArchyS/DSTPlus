@@ -17,7 +17,7 @@ You can suggest any changes via the Issues tab or at the steam workshop
 - add toggleable tuning changes e.g. (moonrock axe durability)
 ### V4 ✔️
 - add custom obsidian tools and tweak any unbalanced stuff
-### V5
+### V5 ✔️
 - add old rabbit AI and tweak obsidian tools
 ### V6
 - add toggleable spoilage for most perishable stuff

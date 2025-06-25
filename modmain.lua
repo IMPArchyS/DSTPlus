@@ -56,21 +56,21 @@ if enableAltRecipes == "true" then
 	},
 	tech.SCIENCE_TWO, {numtogive = 10}, {"DECOR"})
 
-	AddRecipe2("log", 
+	AddRecipe2("log",
 	{
 		ingredient("twigs", 4),
 		ingredient("nightmarefuel", 2)
 	},
 	tech.SCIENCE_ONE, {numtogive = 8}, {"REFINE"})
 
-	AddRecipe2("twigs", 
+	AddRecipe2("twigs",
 	{
 		ingredient("log", 1),
 		ingredient("nightmarefuel", 1)
 	},
 	tech.SCIENCE_TWO, {numtogive = 4}, {"REFINE"})
 
-	AddRecipe2("flint", 
+	AddRecipe2("flint",
 	{
 		ingredient("rocks", 2)
 	},

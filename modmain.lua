@@ -44,7 +44,7 @@ if enableAltRecipes == "true" then
     AddRecipe2("tentaclespike",
 	{
 		ingredient("livinglog", 1),
-		ingredient("monstermeat", 3),
+		ingredient("monstermeat", 2),
 		ingredient("boneshard", 2)
 	},
 	tech.SCIENCE_TWO, nil, {"WEAPONS"})
@@ -56,21 +56,21 @@ if enableAltRecipes == "true" then
 	},
 	tech.SCIENCE_TWO, {numtogive = 10}, {"DECOR"})
 
-	AddRecipe2("log", 
+	AddRecipe2("log",
 	{
-		ingredient("twigs", 2),
+		ingredient("twigs", 4),
 		ingredient("nightmarefuel", 2)
 	},
 	tech.SCIENCE_ONE, {numtogive = 8}, {"REFINE"})
 
-	AddRecipe2("twigs", 
+	AddRecipe2("twigs",
 	{
 		ingredient("log", 1),
 		ingredient("nightmarefuel", 1)
 	},
-	tech.SCIENCE_TWO, {numtogive = 5}, {"REFINE"})
+	tech.SCIENCE_TWO, {numtogive = 4}, {"REFINE"})
 
-	AddRecipe2("flint", 
+	AddRecipe2("flint",
 	{
 		ingredient("rocks", 2)
 	},
@@ -78,9 +78,9 @@ if enableAltRecipes == "true" then
 
 	AddRecipe2("sewing_kit", 
 	{
-		ingredient("log", 4),
+		ingredient("log", 2),
 		ingredient("silk", 4),
-		ingredient("stinger", 8)
+		ingredient("stinger", 6)
 	},
 	tech.SCIENCE_TWO, nil, {"CLOTHING", "TOOLS"})
 
@@ -110,5 +110,5 @@ if enableAltRecipes == "true" then
 		ingredient("nightmarefuel", 1),
 		ingredient("rottenegg", 1)
 	},
-	tech.SCIENCE_TWO, {numtogive = 4}, {"REFINE"})
+	tech.SCIENCE_TWO, {numtogive = 2}, {"REFINE"})
 end

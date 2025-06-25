@@ -24,4 +24,13 @@ configuration_options = {
 		},
 		default = "true",
 	},
+	{
+		name = "AltTunings",
+		label = "Alternative Tunings",
+		options = {
+			{description = "True", data = "true"},
+			{description = "False", data = "false"},
+		},
+		default = "true",
+	},
 }

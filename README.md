@@ -12,8 +12,8 @@ You can suggest any changes via the Issues tab or at the steam workshop
 ### V1 ✔️
 - initial start, toggleable alternative recipes for most building materials that tend to get annoying to farm
 ### V2 ✔️
-- balance recipes based on feedback
-### V3
+- balance recipes base on feedback
+### V3 ✔️
 - add toggleable tuning changes e.g. (moonrock axe durability)
 ### V4
 - add custom obsidian tools and tweak any unbalanced stuff

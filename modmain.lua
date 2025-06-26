@@ -206,8 +206,6 @@ if disableSpoilage == "true" then
 		"butter",
         "honey",
 		"lightbulb",
-		"seeds",
-		"seeds_cooked",
 		"tallbirdegg_cooked",
 		"trunk_summer",
 		"trunk_winter",
@@ -256,9 +254,29 @@ if disableSpoilage == "true" then
 		"kelp",
 		"kelp_cooked",
 		"royal_jelly",
+		"potato",
+		"potato_cooked",
+		-- seeds
+		"seeds",
+		"seeds_cooked",
+		"carrot_seeds",
+		"corn_seeds",
+		"pumpkin_seeds",
+		"eggplant_seeds",
+		"durian_seeds",
+		"pomegranate_seeds",
+		"dragonfruit_seeds",
+		"fig_seeds",
+		"watermelon_seeds",
+		"pepper_seeds",
+		"garlic_seeds",
+		"onion_seeds",
+		"tomato_seeds",
+		"potato_seeds",
+
 		-- meats
 		"meat",
-		"ccookedmeat",
+		"cookedmeat",
 		"meat_dried",
 		"monstermeat",
 		"cookedmonstermeat",
@@ -283,6 +301,8 @@ if disableSpoilage == "true" then
 		"barnacle_cooked",
 		"batnose",
 		"batnose_cooked",
+		"froglegs",
+		"froglegs_cooked",
     }
 
     for _, food in ipairs(foodsNoSpoilage) do

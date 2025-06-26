@@ -19,8 +19,8 @@ You can suggest any changes via the Issues tab or at the steam workshop
 - add custom obsidian tools and tweak any unbalanced stuff
 ### V5 ✔️
 - add old rabbit AI and tweak obsidian tools
-### V6
-- add toggleable spoilage for most perishable stuff
+### V6 ✔️
+- add toggleable spoilage for most perishable stuff, add old spiderden without spider turf and warriors
 ### V7
 - tweak values and balance the whole package
 ### V8

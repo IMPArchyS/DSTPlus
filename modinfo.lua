@@ -1,7 +1,7 @@
-name = "DSTplus V5"
+name = "DSTplus V6"
 description = "Tweaks to normal Don't Starve recipes, more recipes for resources, even custom tools, tweaks for spoilage & rabbit AI."
 author = "ArchyS"
-version = "0.5"
+version = "0.6"
 
 forumthread = ""
 
@@ -45,6 +45,15 @@ configuration_options = {
 	{
 		name = "rabbitAI",
 		label = "Old Rabbit AI",
+		options = {
+			{description = "True", data = "true"},
+			{description = "False", data = "false"},
+		},
+		default = "true",
+	},
+	{
+		name = "Spoilage",
+		label = "Most foods don't spoil",
 		options = {
 			{description = "True", data = "true"},
 			{description = "False", data = "false"},

@@ -196,3 +196,155 @@ if enableOldRabbitAi == "true" then
         end
     end)
 end
+
+-- TOGGLEABLE spoilage for most foods, some foods still spoil to get rot
+local disableSpoilage = GetModConfigData("Spoilage") or "true"
+
+if disableSpoilage == "true" then
+    -- Disable perishable component 
+    local foodsNoSpoilage = {
+		"butter",
+        "honey",
+		"lightbulb",
+		"seeds",
+		"seeds_cooked",
+		"tallbirdegg_cooked",
+		"trunk_summer",
+		"trunk_winter",
+		"trunk_cooked",
+		"butterflywings",
+		"cactus_flower",
+		"cactus_meat",
+		"cactus_meat_cooked",
+		"bird_egg",
+		"bird_egg_cooked",
+		"goatmilk",
+		"cave_banana",
+		"cave_banana_cooked",
+		"berries",
+		"berries_cooked",
+		"carrot",
+		"carrot_cooked",
+		"corn",
+		"corn_cooked",
+		"pumpkin",
+		"pumpkin_cooked",
+		"eggplant",
+		"eggplant_cooked",
+		"durian",
+		"durian_cooked",
+		"pomegranate",
+		"pomegranate_cooked",
+		"dragonfruit",
+		"dragonfruit_cooked",
+		"berries_juicy",
+		"berries_juicy_cooked",
+		"fig",
+		"fig_cooked",
+		"watermelon",
+		"watermelon_cooked",
+		"pepper",
+		"pepper_cooked",
+		"garlic",
+		"garlic_cooked",
+		"onion",
+		"onion_cooked",
+		"asparagus",
+		"asparagus_cooked",
+		"tomato",
+		"tomato_cooked",
+		"kelp",
+		"kelp_cooked",
+		"royal_jelly",
+		-- meats
+		"meat",
+		"ccookedmeat",
+		"meat_dried",
+		"monstermeat",
+		"cookedmonstermeat",
+		"monstermeat_dried",
+		"smallmeat",
+		"cookedsmallmeat",
+		"smallmeat_dried",
+		"drumstick",
+		"drumstick_cooked",
+		"batwing",
+		"batwing_cooked",
+		"plantmeat",
+		"plantmeat_cooked",
+		"fishmeat_small",
+		"fishmeat_small_cooked",
+		"fishmeat",
+		"fishmeat_cooked",
+		"humanmeat",
+		"humanmeat_cooked",
+		"humanmeat_dried",
+		"barnacle",
+		"barnacle_cooked",
+		"batnose",
+		"batnose_cooked",
+    }
+
+    for _, food in ipairs(foodsNoSpoilage) do
+        AddPrefabPostInit(food, function(inst)
+            if inst.components.perishable then
+				inst:RemoveComponent("perishable")
+				inst:AddTag("icebox_valid")
+            end
+        end)
+    end
+
+	-- local foodsInfiniteSpoilage = {
+	-- }
+	--
+	-- for _, food in ipairs(foodsInfiniteSpoilage) do
+    --     AddPrefabPostInit(food, function(inst)
+    --         if inst.components.perishable then
+    --             inst.components.perishable.StartPerishing = function() end
+    --             inst.components.perishable:SetPerishTime(999999999)
+	-- 			-- inst.components.perishable.onperishreplacement = "spoiled_food"
+    --         end
+    --     end)
+    -- end
+
+	-- Override dryer component to handle items without perishable component
+	AddComponentPostInit("dryer", function(self)
+		local original_StartDrying = self.StartDrying
+		local original_Harvest = self.Harvest
+		local original_DropItem = self.DropItem
+
+		self.StartDrying = function(self, item)
+			if not item then
+				return
+			end
+
+			if not item.components.perishable then
+				item:AddComponent("perishable")
+				item.components.perishable:SetPerishTime(nil)
+				item._temp_perishable = true -- Mark as temporary
+			end
+
+			return original_StartDrying(self, item)
+		end
+
+		self.Harvest = function(self, harvester)
+			local result = original_Harvest(self, harvester)
+
+			if self.dryingitem and self.dryingitem._temp_perishable then
+				self.dryingitem:RemoveComponent("perishable")
+				self.dryingitem._temp_perishable = nil
+			end
+
+			return result
+		end
+
+		self.DropItem = function(self)
+			if self.dryingitem and self.dryingitem._temp_perishable then
+				self.dryingitem:RemoveComponent("perishable")
+				self.dryingitem._temp_perishable = nil
+			end
+
+			return original_DropItem(self)
+		end
+	end)
+end
